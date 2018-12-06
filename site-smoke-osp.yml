@@ -9,6 +9,9 @@
     tags:
       - osp.smoke
   
+  - debug: 
+      var: inventory_hostname
+
   - name: Curl website
     uri:
       url: "http://{{inventory_hostname}}"
