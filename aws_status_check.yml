@@ -1,4 +1,4 @@
-- hosts: tag_instance_filter_three_tier_app_malcolm@code_partners_com
+- hosts: tag_instance_filter_three_tier_app_*malcolm*
   gather_facts: false
   tasks:
   - name: Check the instances status
