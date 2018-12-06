@@ -1,7 +1,7 @@
 ---
 # tasks file for base-config
 
-block:
+- block:
     - name: enable sudo without tty for some ansible commands
       replace:
         path: /etc/sudoers
@@ -22,4 +22,4 @@ block:
         name: 
         - httpie
         - python-pip 
-tags: ['base-config']
+  tags: ['base-config']
