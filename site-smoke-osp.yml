@@ -10,17 +10,17 @@
       - osp.smoke
   
   - debug: 
-      var: openstack_info.ansible_facts.openstack_servers[0].accessIPv4
-
-# TODO : filter out IP from openstack_info     
+      var: openstack_info.ansible_facts.openstack_servers[0].accessIPv4    
 
   - name: Curl website
     uri:
-      url: "http://{{inventory_hostname}}"
+      url: "http://{{openstack_info.ansible_facts.openstack_servers[0].accessIPv4}}"
       return_content: yes
       timeout: 300
     register: webpage
 
+  - debug: 
+      var: webpage
 
   - name: Fail if 'Ansible has done its job' is not in the page content
     fail:
