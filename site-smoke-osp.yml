@@ -10,7 +10,7 @@
       - osp.smoke
   
   - debug: 
-      var: openstack_info
+      var: openstack_info.ansible_facts.openstack_servers[0].accessIPv4
 
 # TODO : filter out IP from openstack_info     
 
